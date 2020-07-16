@@ -13,6 +13,7 @@ if (APPLE)
     message("BUILD TARGET OS : ${CMAKE_HOST_SYSTEM_NAME}")
 elseif(WINDOWS)
     message("BUILD TARGET OS : ${CMAKE_HOST_SYSTEM_NAME}")
+    set(CMAKE_CXX_FLAGS "-fexec-charset=CP949")         # 윈도우에서 CLion을 통해 생성한 .exe 파일 실행 시 한글 깨짐 현상 방지
 elseif(UNIX)
     message("BUILD TARGET OS : ARM-Linux")
     set(CMAKE_C_COMPILER arm-linux-gnueabi-gcc)
